@@ -19,14 +19,13 @@ https://thewebdev.info/2021/08/15/how-to-find-all-subsets-of-a-set-in-javascript
  * 
 */
 
-const getAllSubsets =
-  theArray => theArray.reduce(
-    (subsets, value) => subsets.concat(
-      subsets.map(set => [value, ...set])
-    ),
-    [
-      []
-    ]
+const getAllSubsets = (theArray) =>
+  theArray.reduce(
+    (subsets, value) => {
+    console.log(subsets, value)
+      return subsets.concat(subsets.map((set) => [value, ...set]));
+    },
+    [[]]
   );
 
-console.log(getAllSubsets([1, 2, 3]));
+console.log("====",getAllSubsets([1, 2, 3,4]));

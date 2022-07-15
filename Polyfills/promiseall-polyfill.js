@@ -20,7 +20,7 @@ const customPromiseAll = function (promiseArr) {
       promise
         .then((response) => {
           countTotalPromise++;
-          result.push(response);
+          result[index] = response;
           if (countTotalPromise == promiseArr.length) {
             resolve(result);
           }
